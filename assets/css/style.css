@@ -261,8 +261,8 @@ body {
 
 .product-card .card-action {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 300;
+  left: 500;
   transform: translate(-50%, -50%) scale(0.8);
   background-color: var(--xiketic);
   display: flex;
