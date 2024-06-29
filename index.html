@@ -179,45 +179,52 @@ div + div {
     
 
 <div class="container">
-    <form action="" method="POST" id="address-form">
-      <fieldset>
-        <legend>Shipping Address</legend>
-        <p class="input-wrapper lg-half">
-          <input type="text" name="shipping-first-name" id="shipping-first-name" required>
-          <label for="shipping-first-name">First Name</label>
-        </p>
-        <p class="input-wrapper lg-half">
-          <input type="text" name="shipping-last-name" id="shipping-last-name" required>
-          <label for="shipping-last-name">Last Name</label>
-        </p>
-        <p class="input-wrapper lg-half">
-          <input type="text" name="shipping-street-address" id="shipping-street-address" required>
-          <label for="shipping-street-address">Street Address</label>
-        </p>
-        <p class="input-wrapper lg-third">
-          <input type="text" name="shipping-apt-address" id="shipping-apt-address">
-          <label for="shipping-apt-address">Apt/Suite</label>
-        </p>
-        <p class="input-wrapper lg-half">
-          <input type="text" name="shipping-city" id="shipping-city" required>
-          <label for="shipping-city">City</label>
-        </p>
-        <p class="input-wrapper lg-third">
-          <input type="text" name="shipping-postal-code" id="shipping-postal-code" required>
-          <label for="shipping-postal-code">Zip/Postal Code</label>
-        </p>
-        <p class="input-wrapper lg-half">
-          <input type="text" id="shipping-country" list="shipping-country-list" name="shipping-country" required>
-          <datalist id="shipping-country-list">
-            
-            <option value="India - IN">
-           
-          </datalist>
-          <label for="shipping-country">Country</label></p>
-     
-         <p class="submit-wrap"><button class="btn">Next: Payment Information &rarr;</button></p>
-    </form>
+  <h1>Shipping</h1>
+  <p>Please enter your shipping details.</p>
+  <hr />
+  <div class="form">
+    
+  <div class="fields fields--2">
+    <label class="field">
+      <span class="field__label" for="firstname">First name</span>
+      <input class="field__input" type="text" id="firstname" value="" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="lastname">Last name</span>
+      <input class="field__input" type="text" id="lastname" value="" />
+    </label>
   </div>
+  <label class="field">
+    <span class="field__label" for="address">Address</span>
+    <input class="field__input" type="text" id="address" />
+  </label>
+  <label class="field">
+    <span class="field__label" for="country">Country</span>
+    <select class="field__input" id="country">
+      <option value=""></option>
+      <option value="india">India - IN</option>
+    </select>
+  </label>
+  <div class="fields fields--3">
+    <label class="field">
+      <span class="field__label" for="zipcode">Zip code</span>
+      <input class="field__input" type="text" id="zipcode" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="city">City</span>
+      <input class="field__input" type="text" id="city" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="state">State</span>
+      <select class="field__input" id="state">
+        <option value=""></option>
+      </select>
+    </label>
+  </div>
+  </div>
+  <hr>
+  <button class="button">Continue</button>
+</div>
     - #BACK TO TOP
   -->
 
