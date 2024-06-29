@@ -78,7 +78,7 @@
   <p> Standard Shipping cost ₹100 </p>
   <hr />
   <div class="form" form action="mailto:inkedbyanshul@gmail.com" method="post" enctype="text/plain">
-
+<form onsubmit="emailSend(); reset(); return false;"
   <div class="fields fields--2">
     <label class="field">
       <span class="field__label" for="firstname">First name</span>
@@ -116,9 +116,13 @@
   </div>
   </div>
   <hr>
+      <button type="submit" class="btn"> Submit </button>
   <button class="button">Continue</button>
+    </form>
 </div>
-  
+  <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
 
 <img src="./qrcode.jpg" alt="Pay Amount & add your phone number in remarks" class="center" width="100%" height="100%">
      
@@ -128,7 +132,8 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/script.js"</script>
+      
 
   <!-- 
     - ionicon link
