@@ -1,6 +1,5 @@
-Booken - Get Your New Book Collections
+Inked By Anshul - Get Your New Book Now!
 
-This is a Book eCommerce html template made by codewithsadee
 
 
 
@@ -43,10 +42,10 @@ Contact
 
 #---------- HERO ----------#
 
-Get Your New
-Book Collections
 
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some formr.
+Once Upon a Book...
+
+Get to know the poems inked by a boy with varied age of 13 to 17 years.
 
 Explore More
 <ion-icon name="cart" aria-hidden="true"></ion-icon>
@@ -63,26 +62,25 @@ aria-label = hero banner
 alt = feature icon
 
 Free Shipping
-Order over $100
+Order over ₹500
 
 Secure Payment
 100% Secure Payment
 
 Best Price
-Guaranteed Low Cost
+Guaranteed Cost
 
 Easy Return
-Within 30 Days returns
+Within 7 Days returns
 
 
 
 #---------- FEATURED COLLECTION ----------#
 
-Featured Collections
+Featured Book
 
-Contrary to popular belief, Lorem Ipsum is not simply random.
+A consolidated form of musings
 
-New
 
 alt = Black Night
 
@@ -102,143 +100,7 @@ Black Night
 
 $80.00
 
-<ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-
-
-alt = About The First Night
-About The First Night
-$19.00
-
-alt = Open The Sky
-Open The Sky
-$80.00
-
-alt = Book Hard Cover
-Book Hard Cover
-$55.00
-
-alt = The Big Book Of Science
-The Big Book Of Science
-$100.00
-
-alt = By The Air
-By The Air
-$89.00
-
-alt = Murdering Last Year
-Murdering Last Year
-$34.00
-
-alt = Stay Healthy
-Stay Healthy
-$67.00
-
-
-
-#---------- OFFER ----------#
-
-Special Offers
-
-All books are 50% off now! Don't miss such a deal!
-
-You will learn how to animate shapes like circles, lines, and polygons. You'll also learn how to animate CSS properties like color and size.
-
-15
-Days
-
-21
-Hour
-
-18
-Min
-
-14
-Sec
-
-Explore More
-
-
-
-#---------- POPULAR ----------#
-
-Popular Collections
-Contrary to popular belief, Lorem Ipsum is not simply random.
-
-filter = featured
-Featured Products
-
-filter = new
-New Products
-
-filter = sell
-Upsell Prodcuts
-
-filter = sell
-alt = Self Care
-Self Care
-$34.00
-
-filter = new
-alt = Welcome to Space
-Welcome to Space
-$150.00
-
-filter = sell
-alt = Monsoon
-Monsoon
-$23.00
-
-filter = featured
-alt = Every Thing You Ever
-Every Thing You Ever
-$57.00
-
-filter = new
-alt = Graphic Design School
-Graphic Design School
-$100.00
-
-filter = sell
-alt = Food Poison
-Food Poison
-$76.00
-
-filter = featured
-alt = Design
-Design
-Free
-
-filter = new
-alt = World News
-World News
-$20.00
-
-
-
-
-
-#---------- BLOG ----------#
-
-Latest Blog
-
-Contrary to popular belief, Lorem Ipsum is not simply random.
-
-alt = Significant reading has info
-
-Significant reading has info
-04 March, 2022
-1 comment
-
-The summer holidays are wonderful. Dressing for them can be significantly less so: Packing light...
-
-Read More...
-
-Activities Book International
-
-International activities of the book
-
-
-
+ 
 
 
 #---------- FOOTER ----------#
