@@ -20,55 +20,61 @@
   <link rel="preload" as="image" href="./assets/images/Beneath_Showers__3_-removebg-preview.png
 ">
   <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-    #shipping-form {
-      max-width: 400px;
-      margin: 40px auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-    input[type="text"], input[type="email"], input[type="tel"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #fff;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #fff;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    button[type="submit"] {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button[type="submit"]:hover {
-      background-color: #3e8e41;
-    }
-    input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
-      outline: 1px solid #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+ <style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  #shipping-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
+    outline: 1px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #shipping-form input[type="text"], #shipping-form input[type="email"], #shipping-form input[type="tel"], #shipping-form select {
+    color: #fff; /* change font color to white */
+  }
+  #shipping-form label {
+    color: #fff; /* change font color to white */
+  }
+</style>
 </head>
 <body id="top">
   <main>
@@ -144,8 +150,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="zip">Zip Code:</label>
-            <input type="text" id="zip" name="zip" required>
+            <label for="zip">Pin Code:</label>
+            <input type="text" id="pin" name="pin" required>
           </div>
           <div class="form-group">
             <label for="payment-screenshot">Upload Payment Screenshot:</label>
