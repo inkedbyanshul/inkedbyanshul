@@ -1,4 +1,3 @@
-<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +90,7 @@
         <p>Free Shipping All Over India</p>
        
         <hr />
-        <form action="https://formspree.io/f/xkgwnnww" method="POST" id="shipping-form">
+        <form id="shipping-form">
           <h2>Shipping Address Information</h2>
           <div class="form-group">
             <label for="name">Name:</label>
@@ -164,10 +163,27 @@
       </div>
     </article>
   </main>
+  <script>
+    document.getElementById("shipping-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "mailto:inkedbyanshul@gmail.com", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send("name=" + encodeURIComponent(formData.get("name")) +
+               "&email=" + encodeURIComponent(formData.get("email")) +
+               "&phone=" + encodeURIComponent(formData.get("phone")) +
+               "&address=" + encodeURIComponent(formData.get("address")) +
+               "&city=" + encodeURIComponent(formData.get("city")) +
+               "&state=" + encodeURIComponent(formData.get("state")) +
+               "&pin=" + encodeURIComponent(formData.get("pin")) +
+               "&payment-screenshot=" + encodeURIComponent(formData.get("payment-screenshot")));
+    });
+  </script>
   <script src="assets/js/script.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <!-- Ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+  </body>
 </html>
