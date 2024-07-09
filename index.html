@@ -103,11 +103,9 @@
           </div>
           <div class="form-group">
             <label for="address">Address:</label>
-
-
+            
 <input type="text" id="address" name="address" required>
-
-          </div>
+                      </div>
           <div class="form-group">
             <label for="city">City:</label>
             <input type="text" id="city" name="city" required>
@@ -158,7 +156,8 @@
   </main>
 
   <script>
-    function sendEmail() {
+    function sendEmail(event) {
+      event.preventDefault();
       var templateParams = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -172,17 +171,18 @@
       emailjs.send('service_ztv1axr', 'template_5os6scx', templateParams)
         .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
+          alert('Email sent successfully!');
         }, function(error) {
           console.log('FAILED...', error);
+          alert('Error sending email. Please try again.');
         });
     }
 
-    document.getElementById('shipping-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      sendEmail();
-    });
+    document.getElementById('shipping-form').addEventListener('submit', sendEmail);
   </script>
 
   <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 </body>
 </html>
+
+              
