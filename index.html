@@ -2,114 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inked By Anshul - Get Yours Book Now!</title>
-  <link rel="shortcut icon" href="./signaturefavicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/style2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="./assets/images/hero-bg1.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-bg2.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-bg3.jpg">
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* Image Carousel */
-    .carousel {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 15px;
-    }
-    .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel-images img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      padding: 10px 15px;
+    .btn {
+      background-color: white;
+      color: #ff4500;
+      border: 2px solid #ff4500;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 20px;
-      border-radius: 50%;
     }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    .carousel-btn:hover { background-color: rgba(255, 255, 255, 1); }
-
-    /* Form Input Styling */
+    .btn:hover {
+      background-color: #ff4500;
+      color: white;
+    }
     .form-group input, .form-group select {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
       border-radius: 5px;
       border: 1px solid white;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: #ffede0;
       color: black;
     }
     .order-btn {
       display: block;
       width: 100%;
-      padding: 12px;
-      background-color: white;
-      color: var(--theme-color);
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      cursor: pointer;
+      padding: 10px;
       text-align: center;
+      background-color: white;
+      color: #ff4500;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 2px solid #ff4500;
+    }
+    .order-btn:hover {
+      background-color: #ff4500;
+      color: white;
     }
   </style>
 </head>
-<body id="top">
+<body>
   <main>
     <article>
-      <br><br>
-
-      <!-- Image Carousel -->
-      <div class="carousel">
-        <div class="carousel-images">
-          <img src="./assets/images/hero-bg1.jpg" alt="Banner 1">
-          <img src="./assets/images/hero-bg2.jpg" alt="Banner 2">
-          <img src="./assets/images/hero-bg3.jpg" alt="Banner 3">
+      <figure class="hero-banner">
+        <div class="carousel">
+          <img src="./assets/images/banner1.jpg" class="carousel-img">
+          <img src="./assets/images/banner2.jpg" class="carousel-img">
+          <img src="./assets/images/banner3.jpg" class="carousel-img">
         </div>
-        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
-        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
-      </div>
-
-      <p><center>Once Upon A Book....</center></p>
-      <br>
-
-      <!-- Grab Now Button with Price -->
-      <div class="grab-now-container">
-        <button class="grab-now-btn" onclick="scrollToForm()">Grab Now</button>
-        <span class="theme-color">@₹137</span>
-      </div>
-
-      <hr />
-
-      <!-- Payment QR Code Section -->
+      </figure>
+      <p class="hero-text" style="text-align: center;">
+        <button class="btn" onclick="document.getElementById('shipping-form').scrollIntoView({behavior: 'smooth'});">Grab Now</button> @₹137
+      </p>
       <div class="payment-section">
         <h3>Scan to Pay</h3>
-        <br>
         <center><img src="./assets/images/MOBIQUICK_QR.jpg" alt="Mobikwik Payment QR Code"></center>
       </div>
-      
       <div class="container">
         <p><center>Free Shipping! for beautiful readers :)</center></p>
         <hr />
@@ -143,6 +99,12 @@
               <option value="Maharashtra">Maharashtra</option>
               <option value="Uttar Pradesh">Uttar Pradesh</option>
               <option value="West Bengal">West Bengal</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Haryana">Haryana</option>
             </select>
           </div>
           <div class="form-group">
@@ -154,51 +116,35 @@
       </div>
     </article>
   </main>
-
-  <!-- EmailJS -->
+  <script>
+    let index = 0;
+    function carousel() {
+      let slides = document.querySelectorAll(".carousel-img");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      index++;
+      if (index > slides.length) { index = 1; }
+      slides[index - 1].style.display = "block";
+      setTimeout(carousel, 3000);
+    }
+    carousel();
+  </script>
   <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   <script>
-    emailjs.init("-M2E86myTW1WMc8Gy"); // Your public key
-
+    emailjs.init("-M2E86myTW1WMc8Gy");
     document.getElementById('shipping-form').addEventListener('submit', function(event) {
       event.preventDefault();
-      var templateParams = {
-        'name': document.getElementById('name').value,
-        'email': document.getElementById('email').value,
-        'phone': document.getElementById('phone').value,
-        'address': document.getElementById('address').value,
-        'city': document.getElementById('city').value,
-        'state': document.getElementById('state').value,
-        'pincode': document.getElementById('pincode').value
-      };
-
-      emailjs.send('service_99nfqru', 'template_oemsjif', templateParams)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Email sent successfully!');
-        })
-        .catch(function(error) {
-          console.error('FAILED...', error);
-          alert('Error sending email. Please try again.\nError details: ' + error.text);
-        });
+      emailjs.send('service_99nfqru', 'template_oemsjif', {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        state: document.getElementById('state').value,
+        pincode: document.getElementById('pincode').value
+      }).then(response => alert('Email sent successfully!')).catch(error => alert('Error sending email.'));  
     });
-
-    // Carousel Script
-    let currentIndex = 0;
-    const slides = document.querySelectorAll(".carousel-images img");
-    const totalSlides = slides.length;
-
-    function showSlide(index) {
-      const carousel = document.querySelector(".carousel-images");
-      if (index >= totalSlides) currentIndex = 0;
-      else if (index < 0) currentIndex = totalSlides - 1;
-      else currentIndex = index;
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    function nextSlide() { showSlide(currentIndex + 1); }
-    function prevSlide() { showSlide(currentIndex - 1); }
-    setInterval(nextSlide, 3000);
   </script>
 </body>
 </html>
