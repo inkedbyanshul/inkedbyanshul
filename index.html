@@ -17,6 +17,32 @@
     body {
       font-family: 'Montserrat', sans-serif;
     }
+    .theme-color {
+      color: #ff5733; /* Replace with your actual theme color */
+    }
+    .grab-now-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .grab-now-btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: white;
+      color: #ff5733; /* Replace with theme color */
+      border: 2px solid #ff5733;
+      border-radius: 50px;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .grab-now-btn:hover {
+      background-color: #ff5733;
+      color: white;
+    }
     .payment-section {
       text-align: center;
       margin: 20px 0;
@@ -26,25 +52,38 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    .grab-now-btn {
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid white;
+      background-color: #ffe6e6; /* Accent color */
+      border-radius: 5px;
+      outline: none;
+      font-size: 16px;
+    }
+    select {
+      height: 45px;
+    }
+    button.order-btn {
       display: block;
-      width: 200px;
       margin: 20px auto;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 18px;
       font-weight: bold;
-      color: white;
-      background-color: #ff5733;
-      border: none;
-      border-radius: 5px;
+      background-color: white;
+      color: #ff5733; /* Theme color */
+      border: 2px solid #ff5733;
+      border-radius: 50px;
       cursor: pointer;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s, transform 0.2s;
+      transition: 0.3s;
     }
-    .grab-now-btn:hover {
-      background-color: #e64a19;
-      transform: scale(1.05);
+    button.order-btn:hover {
+      background-color: #ff5733;
+      color: white;
     }
   </style>
 </head>
@@ -58,10 +97,11 @@
         <img src="./assets/images/Beneath_Showers__3_-removebg-preview.png" width="475" height="600" alt="hero banner" class="w-100">
       </figure>
 
-      <!-- Grab Now Button -->
-      <center>
-        <button class="grab-now-btn" onclick="scrollToForm()">Grab Now @₹137</button>
-      </center>
+      <!-- Grab Now Button with Price -->
+      <div class="grab-now-container">
+        <button class="grab-now-btn" onclick="scrollToForm()">Grab Now</button>
+        <span class="theme-color">@₹137</span>
+      </div>
 
       <hr />
 
@@ -129,21 +169,13 @@
               <option value="Uttar Pradesh">Uttar Pradesh</option>
               <option value="Uttarakhand">Uttarakhand</option>
               <option value="West Bengal">West Bengal</option>
-              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-              <option value="Chandigarh">Chandigarh</option>
-              <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-              <option value="Lakshadweep">Lakshadweep</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Puducherry">Puducherry</option>
-              <option value="Ladakh">Ladakh</option>
-              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
             </select>
           </div>
           <div class="form-group">
             <label for="pincode">Pincode:</label>
             <input type="text" id="pincode" name="pincode" required>
           </div>
-          <button type="submit">Order</button>
+          <button type="submit" class="order-btn">Order</button>
         </form>
       </div>
     </article>
