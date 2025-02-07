@@ -26,32 +26,50 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
+    .grab-now-btn {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: #ff5733;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .grab-now-btn:hover {
+      background-color: #e64a19;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body id="top">
   <main>
     <article>
-      <br>
-      <br>
-    
+      <br><br>
       <p><center>Once Upon A Book....</center></p>
       <br>
       <figure class="hero-banner">
         <img src="./assets/images/Beneath_Showers__3_-removebg-preview.png" width="475" height="600" alt="hero banner" class="w-100">
       </figure>
-      <p class="hero-text">
-        <center>Grab now @₹137</center>
-        <br>
+
+      <!-- Grab Now Button -->
+      <center>
+        <button class="grab-now-btn" onclick="scrollToForm()">Grab Now @₹137</button>
+      </center>
+
       <hr />
-        
-      </p>
-      
+
       <!-- Payment QR Code Section -->
       <div class="payment-section">
         <h3>Scan to Pay</h3>
         <br>
         <center><img src="./assets/images/MOBIQUICK_QR.jpg" alt="Mobikwik Payment QR Code"></center>
-       
       </div>
       
       <div class="container">
@@ -83,10 +101,42 @@
             <label for="state">State:</label>
             <select id="state" name="state" required>
               <option value="">Select State</option>
-              <option value="Delhi">Delhi</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
               <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
               <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
               <option value="West Bengal">West Bengal</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Ladakh">Ladakh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
             </select>
           </div>
           <div class="form-group">
@@ -98,5 +148,11 @@
       </div>
     </article>
   </main>
+
+  <script>
+    function scrollToForm() {
+      document.getElementById("shipping-form").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
 </html>
