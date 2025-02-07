@@ -11,79 +11,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="./assets/images/Beneath_Showers__3_-removebg-preview.png">
-  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-bg1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-bg2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-bg3.jpg">
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
     }
-    .theme-color {
-      color: #ff5733; /* Replace with your actual theme color */
+
+    /* Image Carousel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
     }
-    .grab-now-container {
+    .carousel-images {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-top: 20px;
+      transition: transform 0.5s ease-in-out;
     }
-    .grab-now-btn {
-      padding: 10px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      background-color: white;
-      color: #ff5733; /* Replace with theme color */
-      border: 2px solid #ff5733;
-      border-radius: 50px;
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      padding: 10px 15px;
       cursor: pointer;
-      text-align: center;
-      transition: 0.3s;
+      font-size: 20px;
+      border-radius: 50%;
     }
-    .grab-now-btn:hover {
-      background-color: #ff5733;
-      color: white;
-    }
-    .payment-section {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .payment-section img {
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    input, select {
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .carousel-btn:hover { background-color: rgba(255, 255, 255, 1); }
+
+    /* Form Input Styling */
+    .form-group input, .form-group select {
       width: 100%;
       padding: 10px;
-      border: 2px solid white;
-      background-color: #ffe6e6; /* Accent color */
+      margin-top: 5px;
       border-radius: 5px;
-      outline: none;
-      font-size: 16px;
+      border: 1px solid white;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: black;
     }
-    select {
-      height: 45px;
-    }
-    button.order-btn {
+    .order-btn {
       display: block;
-      margin: 20px auto;
-      padding: 12px 25px;
-      font-size: 18px;
-      font-weight: bold;
+      width: 100%;
+      padding: 12px;
       background-color: white;
-      color: #ff5733; /* Theme color */
-      border: 2px solid #ff5733;
-      border-radius: 50px;
+      color: var(--theme-color);
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
       cursor: pointer;
       text-align: center;
-      transition: 0.3s;
-    }
-    button.order-btn:hover {
-      background-color: #ff5733;
-      color: white;
     }
   </style>
 </head>
@@ -91,11 +80,20 @@
   <main>
     <article>
       <br><br>
+
+      <!-- Image Carousel -->
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="./assets/images/hero-bg1.jpg" alt="Banner 1">
+          <img src="./assets/images/hero-bg2.jpg" alt="Banner 2">
+          <img src="./assets/images/hero-bg3.jpg" alt="Banner 3">
+        </div>
+        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+      </div>
+
       <p><center>Once Upon A Book....</center></p>
       <br>
-      <figure class="hero-banner">
-        <img src="./assets/images/Beneath_Showers__3_-removebg-preview.png" width="475" height="600" alt="hero banner" class="w-100">
-      </figure>
 
       <!-- Grab Now Button with Price -->
       <div class="grab-now-container">
@@ -141,33 +139,9 @@
             <label for="state">State:</label>
             <select id="state" name="state" required>
               <option value="">Select State</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-              <option value="Assam">Assam</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Chhattisgarh">Chhattisgarh</option>
-              <option value="Goa">Goa</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Haryana">Haryana</option>
-              <option value="Himachal Pradesh">Himachal Pradesh</option>
-              <option value="Jharkhand">Jharkhand</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Delhi">Delhi</option>
               <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
-              <option value="Meghalaya">Meghalaya</option>
-              <option value="Mizoram">Mizoram</option>
-              <option value="Nagaland">Nagaland</option>
-              <option value="Odisha">Odisha</option>
-              <option value="Punjab">Punjab</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Sikkim">Sikkim</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Tripura">Tripura</option>
               <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="Uttarakhand">Uttarakhand</option>
               <option value="West Bengal">West Bengal</option>
             </select>
           </div>
@@ -181,10 +155,50 @@
     </article>
   </main>
 
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   <script>
-    function scrollToForm() {
-      document.getElementById("shipping-form").scrollIntoView({ behavior: "smooth" });
+    emailjs.init("-M2E86myTW1WMc8Gy"); // Your public key
+
+    document.getElementById('shipping-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var templateParams = {
+        'name': document.getElementById('name').value,
+        'email': document.getElementById('email').value,
+        'phone': document.getElementById('phone').value,
+        'address': document.getElementById('address').value,
+        'city': document.getElementById('city').value,
+        'state': document.getElementById('state').value,
+        'pincode': document.getElementById('pincode').value
+      };
+
+      emailjs.send('service_99nfqru', 'template_oemsjif', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Email sent successfully!');
+        })
+        .catch(function(error) {
+          console.error('FAILED...', error);
+          alert('Error sending email. Please try again.\nError details: ' + error.text);
+        });
+    });
+
+    // Carousel Script
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".carousel-images img");
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      const carousel = document.querySelector(".carousel-images");
+      if (index >= totalSlides) currentIndex = 0;
+      else if (index < 0) currentIndex = totalSlides - 1;
+      else currentIndex = index;
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
+
+    function nextSlide() { showSlide(currentIndex + 1); }
+    function prevSlide() { showSlide(currentIndex - 1); }
+    setInterval(nextSlide, 3000);
   </script>
 </body>
 </html>
